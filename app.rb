@@ -1,4 +1,4 @@
-def add num1, num2
+def add num1, num2 
   num1.to_f + num2.to_f
 end
 
@@ -22,7 +22,11 @@ def power num, exponent
 	num.to_f ** exponent.to_f
 end
 
-puts "Choose a simple or advanced calculator"
+def bmi height, weight 
+	
+end
+
+puts "Choose a s(imple) or a(dvanced) calculator, or a B(MI) calculator"
 option = gets.chomp
 
 if option == "s" 
@@ -49,7 +53,7 @@ if option == "s"
 		num2 = gets.chomp
 		puts division num1, num2
 	end
-else
+elsif option == "a"
   puts "Choose whether you want to find the sq(are root) or the p(ower)"
   choice = gets.chomp
   if choice == "sq"
@@ -62,6 +66,8 @@ else
   	exponent = gets.chomp
   	puts power num, exponent
   end
+elsif option == "b"
+
 end
 
 
