@@ -23,18 +23,18 @@ def power num, exponent
 end
 
 def bmi height, weight 
-	puts "I(mperial) or M(etric) system?"
+	puts "i(mperial) or m(etric) system?"
 	measurement_system = gets.chomp
-	if measurement_system == "M"
+	if measurement_system == "m"
 		puts weight.to_f / (height.to_f ** 2)
 	else 
 		pounds = weight.to_f * 2.2
 		inches = height.to_f * 39.37
-		puts pounds / (inches ** 2)
+		puts pounds / (inches ** 2) * 703
 	end 
 end
 
-puts "Choose a s(imple) or a(dvanced) calculator, or a B(MI) calculator"
+puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) calculator"
 option = gets.chomp
 
 if option == "s" 
@@ -75,7 +75,10 @@ elsif option == "a"
   	puts power num, exponent
   end
 elsif option == "b"
-
+	puts "Enter a height and weight"
+	height = gets.chomp
+	weight = gets.chomp
+	bmi height, weight
 end
 
 
