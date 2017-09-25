@@ -34,7 +34,14 @@ def bmi height, weight
 	end 
 end
 
-puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) calculator"
+def travel distance, miles_per_gallon, cost_per_gallon, speed
+	time = distance.to_f / speed.to_f
+	cost = distance.to_f / miles_per_gallon.to_f
+	total = cost * cost_per_gallon.to_f
+	puts "Your trip will take #{time} hours and cost £#{total}"
+end
+
+puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) or t(ravel) calculator"
 option = gets.chomp
 
 if option == "s" 
@@ -79,6 +86,13 @@ elsif option == "b"
 	height = gets.chomp
 	weight = gets.chomp
 	bmi height, weight
+elsif option == "t"
+	puts "Enter the distance, mpg, cpg and speed"
+	distance = gets.chomp
+	miles_per_gallon = gets.chomp
+	cost_per_gallon = gets.chomp
+	speed = gets.chomp
+	travel distance, miles_per_gallon, cost_per_gallon, speed
 end
 
 
