@@ -35,10 +35,22 @@ def bmi height, weight
 end
 
 def travel distance, miles_per_gallon, cost_per_gallon, speed
-	time = distance.to_f / speed.to_f
-	cost = distance.to_f / miles_per_gallon.to_f
-	total = cost * cost_per_gallon.to_f
-	puts "Your trip will take #{time} hours and cost £#{total}"
+	if speed.to_f < 60
+		time = distance.to_f / speed.to_f
+		cost = distance.to_f / miles_per_gallon.to_f
+		total = cost * cost_per_gallon.to_f
+	else 
+		difference = distance.to_f - 60
+		reduction = difference * 2
+		deduction = miles_per_gallon.to_f - reduction
+		if deduction == 0
+			deduction = 1
+		end 
+		time = distance.to_f / speed.to_f
+		cost = distance.to_f / deduction
+		total = cost * cost_per_gallon.to_f
+	end
+	puts "Your trip will take #{time.round(2)} hours and cost £#{total}"
 end
 
 puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) or t(ravel) calculator"
