@@ -53,58 +53,73 @@ def travel distance, miles_per_gallon, cost_per_gallon, speed
 	puts "Your trip will take #{time.round(2)} hours and cost £#{total}"
 end
 
-puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) or t(ravel) calculator"
-option = gets.chomp
+another_go = true
+count = 0
 
-if option == "s" 
-	puts "Choose an operation - a(ddition), s(ubtraction), m(ultiplication) or d(ivision)"
-	operation = gets.chomp
-	if operation == "a"
-		puts "Enter two numbers"
-		num1 = gets.chomp
-		num2 = gets.chomp
-		puts add num1, num2
-	elsif operation == "s"
-		puts "Enter two numbers"
-		num1 = gets.chomp
-		num2 = gets.chomp
-		puts subtract num1, num2
-	elsif operation == "m"
-		puts "Enter two numbers"
-		num1 = gets.chomp
-		num2 = gets.chomp
-		puts multiply num1, num2
-	else 
-		puts "Enter two numbers"
-		num1 = gets.chomp
-		num2 = gets.chomp
-		puts division num1, num2
+while another_go == true
+
+	puts "Choose a s(imple) or a(dvanced) calculator, or a b(mi) or t(ravel) calculator"
+	option = gets.chomp
+
+	if option == "s" 
+		puts "Choose an operation - a(ddition), s(ubtraction), m(ultiplication) or d(ivision)"
+		operation = gets.chomp
+		if operation == "a"
+			puts "Enter two numbers"
+			num1 = gets.chomp
+			num2 = gets.chomp
+			puts add num1, num2
+		elsif operation == "s"
+			puts "Enter two numbers"
+			num1 = gets.chomp
+			num2 = gets.chomp
+			puts subtract num1, num2
+		elsif operation == "m"
+			puts "Enter two numbers"
+			num1 = gets.chomp
+			num2 = gets.chomp
+			puts multiply num1, num2
+		else 
+			puts "Enter two numbers"
+			num1 = gets.chomp
+			num2 = gets.chomp
+			puts division num1, num2
+		end
+	elsif option == "a"
+	  puts "Choose whether you want to find the sq(are root) or the p(ower)"
+	  choice = gets.chomp
+	  if choice == "sq"
+	  	puts "Enter a number"
+	  	num = gets.chomp
+	  	puts square_root num
+	  else 
+	  	puts "Enter a number and an exponent"
+	  	num = gets.chomp
+	  	exponent = gets.chomp
+	  	puts power num, exponent
+	  end
+	elsif option == "b"
+		puts "Enter a height and weight"
+		height = gets.chomp
+		weight = gets.chomp
+		bmi height, weight
+	elsif option == "t"
+		puts "Enter the distance, mpg, cpg and speed"
+		distance = gets.chomp
+		miles_per_gallon = gets.chomp
+		cost_per_gallon = gets.chomp
+		speed = gets.chomp
+		travel distance, miles_per_gallon, cost_per_gallon, speed
 	end
-elsif option == "a"
-  puts "Choose whether you want to find the sq(are root) or the p(ower)"
-  choice = gets.chomp
-  if choice == "sq"
-  	puts "Enter a number"
-  	num = gets.chomp
-  	puts square_root num
-  else 
-  	puts "Enter a number and an exponent"
-  	num = gets.chomp
-  	exponent = gets.chomp
-  	puts power num, exponent
-  end
-elsif option == "b"
-	puts "Enter a height and weight"
-	height = gets.chomp
-	weight = gets.chomp
-	bmi height, weight
-elsif option == "t"
-	puts "Enter the distance, mpg, cpg and speed"
-	distance = gets.chomp
-	miles_per_gallon = gets.chomp
-	cost_per_gallon = gets.chomp
-	speed = gets.chomp
-	travel distance, miles_per_gallon, cost_per_gallon, speed
+
+	puts "Another go? y/n"
+	decision = gets.chomp
+
+	if decision == "y"
+		another_go = true
+	else 
+		another_go = false
+	end
+
+	count += 1
 end
-
-
