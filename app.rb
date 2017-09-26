@@ -43,7 +43,7 @@ def travel distance, miles_per_gallon, cost_per_gallon, speed
 		difference = distance.to_f - 60
 		reduction = difference * 2
 		deduction = miles_per_gallon.to_f - reduction
-		if deduction == 0
+		if deduction <= 0
 			deduction = 1
 		end 
 		time = distance.to_f / speed.to_f
